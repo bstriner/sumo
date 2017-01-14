@@ -1,6 +1,6 @@
-noinst_LIBRARIES = libmsactions.a
+noinst_LTLIBRARIES = libmsactions.la
 
-libmsactions_a_SOURCES = \
+libmsactions_la_SOURCES = \
 Command_SaveTLSState.cpp Command_SaveTLSState.h \
 Command_SaveTLSSwitches.cpp Command_SaveTLSSwitches.h \
 Command_SaveTLSSwitchStates.cpp Command_SaveTLSSwitchStates.h \

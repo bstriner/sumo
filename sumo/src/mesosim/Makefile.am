@@ -1,6 +1,6 @@
-noinst_LIBRARIES = libmesosim.a
+noinst_LTLIBRARIES = libmesosim.la
 
-libmesosim_a_SOURCES = MEInductLoop.cpp MEInductLoop.h \
+libmesosim_la_SOURCES = MEInductLoop.cpp MEInductLoop.h \
 MELoop.cpp MELoop.h \
 MESegment.cpp MESegment.h \
 METriggeredCalibrator.cpp METriggeredCalibrator.h \

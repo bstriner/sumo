@@ -6,56 +6,56 @@ GUI_DIRS = gui guinetload guisim netedit mesogui osgview
 endif
 
 if CHECK_MEMORY_LEAKS
-MEM_LIBS  = ./foreign/nvwa/libnvwa.a
+MEM_LIBS  = ./foreign/nvwa/libnvwa.la
 endif
 
 if TRACI
-TRACI_LIBS = ./traci-server/libtraciserver.a ./utils/traci/libtraci.a
+TRACI_LIBS = ./traci-server/libtraciserver.la ./utils/traci/libtraci.la
 TRACI_DIRS = traci-server traci_testclient
 endif
 
 bin_PROGRAMS = od2trips sumo netconvert $(GUI_APPS)
 
-COMMON_LIBS = ./utils/options/liboptions.a \
-./utils/xml/libxml.a \
-./utils/common/libcommon.a \
-./utils/importio/libimportio.a \
-./utils/iodevices/libiodevices.a \
-./foreign/PHEMlight/cpp/libphemlight.a \
-./foreign/tcpip/libtcpip.a \
+COMMON_LIBS = ./utils/options/liboptions.la \
+./utils/xml/libxml.la \
+./utils/common/libcommon.la \
+./utils/importio/libimportio.la \
+./utils/iodevices/libiodevices.la \
+./foreign/PHEMlight/cpp/libphemlight.la \
+./foreign/tcpip/libtcpip.la \
 $(MEM_LIBS) \
 $(XERCES_LIBS)
 
 
 od2trips_SOURCES = od2trips_main.cpp
 
-od2trips_LDADD   = ./od/libod.a \
-./utils/options/liboptions.a \
-./utils/distribution/libdistribution.a \
-./utils/vehicle/libvehicle.a \
-./utils/common/libcommon.a \
-./utils/geom/libgeom.a \
+od2trips_LDADD   = ./od/libod.la \
+./utils/options/liboptions.la \
+./utils/distribution/libdistribution.la \
+./utils/vehicle/libvehicle.la \
+./utils/common/libcommon.la \
+./utils/geom/libgeom.la \
 $(COMMON_LIBS) $(XERCES_LDFLAGS)
 
 
 sumo_SOURCES = sumo_main.cpp
 
-sumo_LDADD   = ./netload/libnetload.a \
-./microsim/libmicrosim.a \
-./microsim/cfmodels/libmicrosimcfmodels.a \
-./microsim/lcmodels/libmicrosimlcmodels.a \
-./microsim/devices/libmicrosimdevs.a \
-./microsim/output/libmicrosimoutput.a \
+sumo_LDADD   = ./netload/libnetload.la \
+./microsim/libmicrosim.la \
+./microsim/cfmodels/libmicrosimcfmodels.la \
+./microsim/lcmodels/libmicrosimlcmodels.la \
+./microsim/devices/libmicrosimdevs.la \
+./microsim/output/libmicrosimoutput.la \
 ./microsim/MSMoveReminder.o \
-./microsim/trigger/libmicrosimtrigger.a \
-./microsim/actions/libmsactions.a \
-./microsim/traffic_lights/libmicrosimtls.a \
-./microsim/pedestrians/libmicrosimpeds.a \
-./mesosim/libmesosim.a \
-./utils/geom/libgeom.a \
-./utils/vehicle/libvehicle.a \
-./utils/shapes/libshapes.a \
-./utils/emissions/libemissions.a \
+./microsim/trigger/libmicrosimtrigger.la \
+./microsim/actions/libmsactions.la \
+./microsim/traffic_lights/libmicrosimtls.la \
+./microsim/pedestrians/libmicrosimpeds.la \
+./mesosim/libmesosim.la \
+./utils/geom/libgeom.la \
+./utils/vehicle/libvehicle.la \
+./utils/shapes/libshapes.la \
+./utils/emissions/libemissions.la \
 $(TRACI_LIBS) \
 $(COMMON_LIBS) \
 $(PYTHON_LIBS) \
@@ -64,15 +64,15 @@ $(FOX_LDFLAGS) $(XERCES_LDFLAGS) $(PROJ_LDFLAGS)
 
 netconvert_SOURCES = netconvert_main.cpp
 
-netconvert_LDADD   = ./netimport/libnetimport.a \
-./netimport/vissim/libvissimimport.a \
-./netimport/vissim/typeloader/libvissimtypeload.a \
-./netimport/vissim/tempstructs/libvissimtmpstr.a \
-./netbuild/libnetbuild.a \
-./netwrite/libnetwrite.a \
-./utils/distribution/libdistribution.a \
-./utils/geom/libgeom.a \
-./foreign/eulerspiral/libeulerspiral.a \
+netconvert_LDADD   = ./netimport/libnetimport.la \
+./netimport/vissim/libvissimimport.la \
+./netimport/vissim/typeloader/libvissimtypeload.la \
+./netimport/vissim/tempstructs/libvissimtmpstr.la \
+./netbuild/libnetbuild.la \
+./netwrite/libnetwrite.la \
+./utils/distribution/libdistribution.la \
+./utils/geom/libgeom.la \
+./foreign/eulerspiral/libeulerspiral.la \
 $(COMMON_LIBS) \
 $(XERCES_LDFLAGS) $(GDAL_LDFLAGS) $(PROJ_LDFLAGS)
 
@@ -80,22 +80,22 @@ $(XERCES_LDFLAGS) $(GDAL_LDFLAGS) $(PROJ_LDFLAGS)
 if WITH_GUI
 sumo_gui_SOURCES = guisim_main.cpp
 
-sumo_gui_LDADD =  ./gui/libgui.a \
-./guinetload/libguinetload.a \
-./guisim/libguisim.a \
-./gui/dialogs/libguidialogs.a \
-./utils/gui/windows/libguiutilsWindows.a \
-./utils/gui/globjects/libguiutilsglobjects.a \
-./utils/gui/div/libguiutilsdiv.a \
-./utils/gui/settings/libguiutilssettings.a \
-./utils/gui/images/libguiutilsimages.a \
-./utils/gui/tracker/libguiutilstracker.a \
-./utils/foxtools/libfoxtools.a \
-./mesogui/libmesogui.a \
-./osgview/libosgview.a \
+sumo_gui_LDADD =  ./gui/libgui.la \
+./guinetload/libguinetload.la \
+./guisim/libguisim.la \
+./gui/dialogs/libguidialogs.la \
+./utils/gui/windows/libguiutilsWindows.la \
+./utils/gui/globjects/libguiutilsglobjects.la \
+./utils/gui/div/libguiutilsdiv.la \
+./utils/gui/settings/libguiutilssettings.la \
+./utils/gui/images/libguiutilsimages.la \
+./utils/gui/tracker/libguiutilstracker.la \
+./utils/foxtools/libfoxtools.la \
+./mesogui/libmesogui.la \
+./osgview/libosgview.la \
 $(sumo_LDADD) \
-./foreign/gl2ps/libgl2ps.a \
-./foreign/polyfonts/libpolyfonts.a \
+./foreign/gl2ps/libgl2ps.la \
+./foreign/polyfonts/libpolyfonts.la \
 ./gui/GUIManipulator.o \
 ./gui/GUITLLogicPhasesTrackerWindow.o \
 $(OSG_LIBS) $(FFMPEG_LIBS) \

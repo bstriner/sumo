@@ -1,5 +1,5 @@
-noinst_LIBRARIES = libguiutilstracker.a
+noinst_LTLIBRARIES = libguiutilstracker.la
 
-libguiutilstracker_a_SOURCES = \
+libguiutilstracker_la_SOURCES = \
 GUIParameterTracker.cpp GUIParameterTracker.h \
 TrackerValueDesc.cpp TrackerValueDesc.h

@@ -1,6 +1,6 @@
-noinst_LIBRARIES = libmicrosimcfmodels.a
+noinst_LTLIBRARIES = libmicrosimcfmodels.la
 
-libmicrosimcfmodels_a_SOURCES = \
+libmicrosimcfmodels_la_SOURCES = \
 MSCFModel.cpp MSCFModel.h \
 MSCFModel_Daniel1.cpp MSCFModel_Daniel1.h \
 MSCFModel_IDM.cpp MSCFModel_IDM.h \

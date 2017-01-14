@@ -1,5 +1,5 @@
 if CHECK_MEMORY_LEAKS
-MEM_LIBS  = ../foreign/nvwa/libnvwa.a
+MEM_LIBS  = ../foreign/nvwa/libnvwa.la
 endif
 
 bin_PROGRAMS = emissionsDrivingCycle emissionsMap
@@ -9,15 +9,15 @@ TrajectoriesHandler.cpp TrajectoriesHandler.h
 
 emissionsDrivingCycle_LDFLAGS = $(XERCES_LDFLAGS)
 
-emissionsDrivingCycle_LDADD   = ../utils/options/liboptions.a \
-../utils/xml/libxml.a \
-../utils/geom/libgeom.a \
-../utils/emissions/libemissions.a \
-../utils/common/libcommon.a \
-../utils/importio/libimportio.a \
-../utils/iodevices/libiodevices.a \
-../foreign/PHEMlight/cpp/libphemlight.a \
-../foreign/tcpip/libtcpip.a \
+emissionsDrivingCycle_LDADD   = ../utils/options/liboptions.la \
+../utils/xml/libxml.la \
+../utils/geom/libgeom.la \
+../utils/emissions/libemissions.la \
+../utils/common/libcommon.la \
+../utils/importio/libimportio.la \
+../utils/iodevices/libiodevices.la \
+../foreign/PHEMlight/cpp/libphemlight.la \
+../foreign/tcpip/libtcpip.la \
 $(MEM_LIBS) \
 -l$(LIB_XERCES)
 

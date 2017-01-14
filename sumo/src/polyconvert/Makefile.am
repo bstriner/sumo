@@ -1,15 +1,15 @@
 XERCES_LIBS = -l$(LIB_XERCES)
 
 if CHECK_MEMORY_LEAKS
-MEM_LIBS  = ../foreign/nvwa/libnvwa.a
+MEM_LIBS  = ../foreign/nvwa/libnvwa.la
 endif
 
-COMMON_LIBS = ../utils/options/liboptions.a \
-../utils/xml/libxml.a \
-../utils/common/libcommon.a \
-../utils/importio/libimportio.a \
-../utils/iodevices/libiodevices.a \
-../foreign/tcpip/libtcpip.a \
+COMMON_LIBS = ../utils/options/liboptions.la \
+../utils/xml/libxml.la \
+../utils/common/libcommon.la \
+../utils/importio/libimportio.la \
+../utils/iodevices/libiodevices.la \
+../foreign/tcpip/libtcpip.la \
 $(MEM_LIBS) \
 $(XERCES_LIBS)
 
@@ -25,9 +25,9 @@ PCPolyContainer.cpp PCPolyContainer.h \
 PCTypeDefHandler.cpp PCTypeDefHandler.h \
 PCTypeMap.cpp PCTypeMap.h
 
-polyconvert_LDADD   = ../utils/options/liboptions.a \
-../utils/geom/libgeom.a \
-../utils/shapes/libshapes.a \
+polyconvert_LDADD   = ../utils/options/liboptions.la \
+../utils/geom/libgeom.la \
+../utils/shapes/libshapes.la \
 $(COMMON_LIBS) \
 $(XERCES_LDFLAGS) $(GDAL_LDFLAGS) $(PROJ_LDFLAGS)
 

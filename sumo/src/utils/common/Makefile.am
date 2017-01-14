@@ -1,6 +1,6 @@
-noinst_LIBRARIES = libcommon.a
+noinst_LTLIBRARIES = libcommon.la
 
-libcommon_a_SOURCES = AbstractMutex.h \
+libcommon_la_SOURCES = AbstractMutex.h \
 Command.h \
 FileHelpers.cpp FileHelpers.h \
 IDSupplier.h IDSupplier.cpp \

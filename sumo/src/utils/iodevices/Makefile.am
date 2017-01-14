@@ -1,8 +1,8 @@
-noinst_LIBRARIES = libiodevices.a
+noinst_LTLIBRARIES = libiodevices.la
 
 EXTRA_DIST = 
 
-libiodevices_a_SOURCES = OutputDevice.cpp OutputDevice.h\
+libiodevices_la_SOURCES = OutputDevice.cpp OutputDevice.h\
 BinaryFormatter.cpp BinaryFormatter.h \
 BinaryInputDevice.cpp BinaryInputDevice.h \
 OutputDevice_CERR.cpp OutputDevice_CERR.h \

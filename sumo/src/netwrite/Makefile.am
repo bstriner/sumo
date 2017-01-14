@@ -1,6 +1,6 @@
-noinst_LIBRARIES = libnetwrite.a
+noinst_LTLIBRARIES = libnetwrite.la
 
-libnetwrite_a_SOURCES = NWFrame.cpp NWFrame.h \
+libnetwrite_la_SOURCES = NWFrame.cpp NWFrame.h \
 NWWriter_Amitran.cpp NWWriter_Amitran.h \
 NWWriter_MATSim.cpp NWWriter_MATSim.h \
 NWWriter_OpenDrive.cpp NWWriter_OpenDrive.h \

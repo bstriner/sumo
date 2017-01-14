@@ -1,6 +1,6 @@
-noinst_LIBRARIES = libnetload.a
+noinst_LTLIBRARIES = libnetload.la
 
-libnetload_a_SOURCES = NLDetectorBuilder.h NLDetectorBuilder.cpp \
+libnetload_la_SOURCES = NLDetectorBuilder.h NLDetectorBuilder.cpp \
 NLDiscreteEventBuilder.h NLDiscreteEventBuilder.cpp \
 NLEdgeControlBuilder.h NLEdgeControlBuilder.cpp \
 NLJunctionControlBuilder.h NLJunctionControlBuilder.cpp \

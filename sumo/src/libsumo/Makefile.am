@@ -4,5 +4,4 @@ libsumo_la_SOURCES = \
 	libsumo.cpp \
 	simulation.cpp \
 	inductionloop.cpp \
-	meme.cpp \
-	$(libnetload_a_SOURCES)
+	meme.cpp 

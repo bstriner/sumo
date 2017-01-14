@@ -1,6 +1,6 @@
-noinst_LIBRARIES = libod.a
+noinst_LTLIBRARIES = libod.la
 
-libod_a_SOURCES = ODDistrict.cpp ODDistrict.h \
+libod_la_SOURCES = ODDistrict.cpp ODDistrict.h \
 ODDistrictCont.cpp ODDistrictCont.h \
 ODAmitranHandler.cpp ODAmitranHandler.h \
 ODDistrictHandler.cpp ODDistrictHandler.h \

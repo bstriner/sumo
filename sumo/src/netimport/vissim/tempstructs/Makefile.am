@@ -1,6 +1,6 @@
-noinst_LIBRARIES = libvissimtmpstr.a
+noinst_LTLIBRARIES = libvissimtmpstr.la
 
-libvissimtmpstr_a_SOURCES = NIVissimAbstractEdge.cpp NIVissimAbstractEdge.h \
+libvissimtmpstr_la_SOURCES = NIVissimAbstractEdge.cpp NIVissimAbstractEdge.h \
 NIVissimBoundedClusterObject.cpp NIVissimBoundedClusterObject.h \
 NIVissimClosedLaneDef.cpp NIVissimClosedLaneDef.h \
 NIVissimClosedLanesVector.h NIVissimClosures.cpp NIVissimClosures.h \

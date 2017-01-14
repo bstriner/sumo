@@ -1,4 +1,4 @@
-noinst_LIBRARIES = libtcpip.a
+noinst_LALIBRARIES = libtcpip.la
 
-libtcpip_a_SOURCES = socket.h socket.cpp storage.h storage.cpp
+libtcpip_la_SOURCES = socket.h socket.cpp storage.h storage.cpp
 

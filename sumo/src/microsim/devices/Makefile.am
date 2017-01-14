@@ -1,6 +1,6 @@
-noinst_LIBRARIES = libmicrosimdevs.a
+noinst_LTLIBRARIES = libmicrosimdevs.la
 
-libmicrosimdevs_a_SOURCES = MSDevice.cpp MSDevice.h \
+libmicrosimdevs_la_SOURCES = MSDevice.cpp MSDevice.h \
 MSDevice_BTreceiver.cpp MSDevice_BTreceiver.h \
 MSDevice_BTsender.cpp MSDevice_BTsender.h \
 MSDevice_Emissions.cpp MSDevice_Emissions.h \

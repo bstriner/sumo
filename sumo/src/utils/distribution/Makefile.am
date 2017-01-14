@@ -1,6 +1,6 @@
-noinst_LIBRARIES = libdistribution.a
+noinst_LTLIBRARIES = libdistribution.la
 
-libdistribution_a_SOURCES = DistributionCont.cpp \
+libdistribution_la_SOURCES = DistributionCont.cpp \
 Distribution_MeanDev.cpp \
 Distribution_Points.cpp \
 DistributionCont.h \

@@ -1,6 +1,6 @@
-noinst_LIBRARIES = libxml.a
+noinst_LTLIBRARIES = libxml.la
 
-libxml_a_SOURCES = GenericSAXHandler.h GenericSAXHandler.cpp \
+libxml_la_SOURCES = GenericSAXHandler.h GenericSAXHandler.cpp \
 SUMOSAXAttributes.cpp SUMOSAXAttributes.h \
 SUMOSAXAttributesImpl_Binary.cpp SUMOSAXAttributesImpl_Binary.h \
 SUMOSAXAttributesImpl_Xerces.cpp SUMOSAXAttributesImpl_Xerces.h \

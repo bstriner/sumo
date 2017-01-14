@@ -1,5 +1,5 @@
-noinst_LIBRARIES = libosgview.a
+noinst_LTLIBRARIES = libosgview.la
 
-libosgview_a_SOURCES = GUIOSGBoundingBoxCalculator.h \
+libosgview_la_SOURCES = GUIOSGBoundingBoxCalculator.h \
 GUIOSGBuilder.cpp GUIOSGBuilder.h \
 GUIOSGView.cpp GUIOSGView.h

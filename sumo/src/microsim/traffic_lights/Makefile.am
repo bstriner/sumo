@@ -1,6 +1,6 @@
-noinst_LIBRARIES = libmicrosimtls.a
+noinst_LTLIBRARIES = libmicrosimtls.la
 
-libmicrosimtls_a_SOURCES = \
+libmicrosimtls_la_SOURCES = \
 MSActuatedTrafficLightLogic.cpp MSActuatedTrafficLightLogic.h \
 MSOffTrafficLightLogic.cpp MSOffTrafficLightLogic.h \
 MSRailSignal.cpp MSRailSignal.h \

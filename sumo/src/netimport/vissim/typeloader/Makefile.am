@@ -1,6 +1,6 @@
-noinst_LIBRARIES = libvissimtypeload.a
+noinst_LTLIBRARIES = libvissimtypeload.la
 
-libvissimtypeload_a_SOURCES = NIVissimSingleTypeParser_Auswertungsdefinition.cpp \
+libvissimtypeload_la_SOURCES = NIVissimSingleTypeParser_Auswertungsdefinition.cpp \
 NIVissimSingleTypeParser_Auswertungsdefinition.h \
 NIVissimSingleTypeParser_Detektordefinition.cpp \
 NIVissimSingleTypeParser_Detektordefinition.h \

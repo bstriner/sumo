@@ -1,3 +1,3 @@
-noinst_LIBRARIES = libtestnetbuild.a
+noinst_LTLIBRARIES = libtestnetbuild.la
 
-libtestnetbuild_a_SOURCES = NBHeightMapperTest.cpp NBTrafficLightLogicTest.cpp
+libtestnetbuild_la_SOURCES = NBHeightMapperTest.cpp NBTrafficLightLogicTest.cpp

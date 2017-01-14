@@ -1,6 +1,6 @@
-noinst_LIBRARIES = libguiutilsdiv.a
+noinst_LTLIBRARIES = libguiutilsdiv.la
 
-libguiutilsdiv_a_SOURCES = \
+libguiutilsdiv_la_SOURCES = \
 GUIDialog_GLChosenEditor.cpp GUIDialog_GLChosenEditor.h \
 GUIGlobalSelection.cpp GUIGlobalSelection.h \
 GUIIOGlobals.cpp GUIIOGlobals.h GUIMessageWindow.cpp GUIMessageWindow.h \

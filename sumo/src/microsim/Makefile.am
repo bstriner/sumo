@@ -1,6 +1,6 @@
-noinst_LIBRARIES = libmicrosim.a
+noinst_LTLIBRARIES = libmicrosim.la
 
-libmicrosim_a_SOURCES = MSBitSetLogic.h \
+libmicrosim_la_SOURCES = MSBitSetLogic.h \
 MSBaseVehicle.cpp MSBaseVehicle.h \
 MSCModel_NonInteracting.h MSCModel_NonInteracting.cpp \
 MSContainer.cpp MSContainer.h \

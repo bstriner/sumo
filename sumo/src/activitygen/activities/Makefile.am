@@ -1,4 +1,4 @@
-noinst_LIBRARIES = libagactivities.a
+noinst_LTLIBRARIES = libagactivities.la
 
 libagactivities_a_SOURCES = AGActivities.cpp AGActivities.h \
 AGTrip.cpp AGTrip.h \

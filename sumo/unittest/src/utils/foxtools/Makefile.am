@@ -1,3 +1,3 @@
-noinst_LIBRARIES = libtestfoxtools.a
+noinst_LTLIBRARIES = libtestfoxtools.la
 
-libtestfoxtools_a_SOURCES = FXWorkerThreadTest.cpp
+libtestfoxtools_la_SOURCES = FXWorkerThreadTest.cpp

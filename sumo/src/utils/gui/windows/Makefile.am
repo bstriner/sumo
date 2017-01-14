@@ -1,6 +1,6 @@
-noinst_LIBRARIES = libguiutilsWindows.a
+noinst_LTLIBRARIES = libguiutilsWindows.la
 
-libguiutilsWindows_a_SOURCES = \
+libguiutilsWindows_la_SOURCES = \
 GUIAppEnum.h \
 GUIDanielPerspectiveChanger.cpp GUIDanielPerspectiveChanger.h \
 GUIDialog_EditViewport.cpp GUIDialog_EditViewport.h \

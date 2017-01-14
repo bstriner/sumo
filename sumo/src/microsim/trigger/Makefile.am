@@ -1,6 +1,6 @@
-noinst_LIBRARIES = libmicrosimtrigger.a
+noinst_LTLIBRARIES = libmicrosimtrigger.la
 
-libmicrosimtrigger_a_SOURCES = MSCalibrator.cpp MSCalibrator.h \
+libmicrosimtrigger_la_SOURCES = MSCalibrator.cpp MSCalibrator.h \
 MSLaneSpeedTrigger.cpp MSLaneSpeedTrigger.h \
 MSTrigger.h MSTrigger.cpp \
 MSChargingStation.h MSChargingStation.cpp \

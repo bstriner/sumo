@@ -1,5 +1,5 @@
-noinst_LIBRARIES = libguinetload.a
+noinst_LTLIBRARIES = libguinetload.la
 
-libguinetload_a_SOURCES = GUIDetectorBuilder.cpp GUIDetectorBuilder.h \
+libguinetload_la_SOURCES = GUIDetectorBuilder.cpp GUIDetectorBuilder.h \
 GUIEdgeControlBuilder.cpp GUIEdgeControlBuilder.h \
 GUITriggerBuilder.cpp GUITriggerBuilder.h

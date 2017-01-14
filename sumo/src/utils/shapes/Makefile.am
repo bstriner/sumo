@@ -1,6 +1,6 @@
-noinst_LIBRARIES = libshapes.a
+noinst_LTLIBRARIES = libshapes.la
 
-libshapes_a_SOURCES = PointOfInterest.h \
+libshapes_la_SOURCES = PointOfInterest.h \
 Shape.cpp Shape.h \
 Polygon.cpp Polygon.h \
 ShapeHandler.cpp ShapeHandler.h \

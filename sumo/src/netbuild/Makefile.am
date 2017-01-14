@@ -1,6 +1,6 @@
-noinst_LIBRARIES = libnetbuild.a
+noinst_LTLIBRARIES = libnetbuild.la
 
-libnetbuild_a_SOURCES = NBAlgorithms.cpp NBAlgorithms.h \
+libnetbuild_la_SOURCES = NBAlgorithms.cpp NBAlgorithms.h \
 NBAlgorithms_Ramps.cpp NBAlgorithms_Ramps.h \
 NBCapacity2Lanes.h NBConnection.cpp NBConnection.h \
 NBConnectionDefs.h NBCont.h NBContHelper.cpp NBContHelper.h \

@@ -1,6 +1,6 @@
-noinst_LIBRARIES = libemissions.a
+noinst_LTLIBRARIES = libemissions.la
 
-libemissions_a_SOURCES = HelpersHarmonoise.cpp HelpersHarmonoise.h \
+libemissions_la_SOURCES = HelpersHarmonoise.cpp HelpersHarmonoise.h \
 HelpersHBEFA.cpp HelpersHBEFA.h \
 HelpersHBEFA3.cpp HelpersHBEFA3.h \
 HelpersPHEMlight.cpp HelpersPHEMlight.h \

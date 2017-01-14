@@ -1,3 +1,3 @@
-noinst_LIBRARIES = libnvwa.a
+noinst_LTLIBRARIES = libnvwa.la
 
-libnvwa_a_SOURCES = debug_new.cpp debug_new.h fast_mutex.h static_assert.h
+libnvwa_la_SOURCES = debug_new.cpp debug_new.h fast_mutex.h static_assert.h

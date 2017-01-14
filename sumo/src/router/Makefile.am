@@ -1,6 +1,6 @@
-noinst_LIBRARIES = librouter.a
+noinst_LTLIBRARIES = librouter.la
 
-librouter_a_SOURCES = ROAbstractEdgeBuilder.h \
+librouter_la_SOURCES = ROAbstractEdgeBuilder.h \
 ROEdge.cpp ROEdge.h \
 ROFrame.cpp ROFrame.h ROHelper.cpp ROHelper.h ROLane.h \
 ROLoader.cpp ROLoader.h \

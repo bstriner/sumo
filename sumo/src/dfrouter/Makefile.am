@@ -1,5 +1,5 @@
 if CHECK_MEMORY_LEAKS
-MEM_LIBS  = ../foreign/nvwa/libnvwa.a
+MEM_LIBS  = ../foreign/nvwa/libnvwa.la
 endif
 
 bin_PROGRAMS = dfrouter
@@ -14,16 +14,16 @@ RODFFrame.cpp RODFFrame.h
 
 dfrouter_LDFLAGS = $(XERCES_LDFLAGS)
 
-dfrouter_LDADD   = ../router/librouter.a \
-../utils/options/liboptions.a \
-../utils/xml/libxml.a \
-../utils/vehicle/libvehicle.a \
-../utils/common/libcommon.a \
-../utils/importio/libimportio.a \
-../utils/iodevices/libiodevices.a \
-../utils/geom/libgeom.a \
-../utils/emissions/libemissions.a \
-../foreign/PHEMlight/cpp/libphemlight.a \
-../foreign/tcpip/libtcpip.a \
+dfrouter_LDADD   = ../router/librouter.la \
+../utils/options/liboptions.la \
+../utils/xml/libxml.la \
+../utils/vehicle/libvehicle.la \
+../utils/common/libcommon.la \
+../utils/importio/libimportio.la \
+../utils/iodevices/libiodevices.la \
+../utils/geom/libgeom.la \
+../utils/emissions/libemissions.la \
+../foreign/PHEMlight/cpp/libphemlight.la \
+../foreign/tcpip/libtcpip.la \
 $(MEM_LIBS) \
 -l$(LIB_XERCES) $(FOX_LDFLAGS)

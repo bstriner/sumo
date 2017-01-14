@@ -1,6 +1,6 @@
-noinst_LIBRARIES = libgui.a
+noinst_LTLIBRARIES = libgui.la
 
-libgui_a_SOURCES = GUIApplicationWindow.cpp GUIApplicationWindow.h \
+libgui_la_SOURCES = GUIApplicationWindow.cpp GUIApplicationWindow.h \
 GUIEvent_SimulationEnded.h GUIEvent_SimulationLoaded.h GUIEvent_Screenshot.h \
 GUIGlobals.cpp GUIGlobals.h \
 GUIManipulator.h GUIManipulator.cpp \

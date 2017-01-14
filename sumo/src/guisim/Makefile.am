@@ -1,6 +1,6 @@
-noinst_LIBRARIES = libguisim.a
+noinst_LTLIBRARIES = libguisim.la
 
-libguisim_a_SOURCES = GUIBusStop.cpp GUIBusStop.h \
+libguisim_la_SOURCES = GUIBusStop.cpp GUIBusStop.h \
 GUIContainer.cpp GUIContainer.h \
 GUIContainerStop.cpp GUIContainerStop.h \
 GUIParkingArea.cpp GUIParkingArea.h \

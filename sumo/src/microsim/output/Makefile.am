@@ -1,6 +1,6 @@
-noinst_LIBRARIES = libmicrosimoutput.a
+noinst_LTLIBRARIES = libmicrosimoutput.la
 
-libmicrosimoutput_a_SOURCES = \
+libmicrosimoutput_la_SOURCES = \
 MSCrossSection.h \
 MSDetectorControl.cpp MSDetectorControl.h \
 MSDetectorFileOutput.h \

@@ -1,8 +1,8 @@
-noinst_LIBRARIES = libfoxtools.a
+noinst_LTLIBRARIES = libfoxtools.la
 
 EXTRA_DIST = FXThreadMessageRetriever.h
 
-libfoxtools_a_SOURCES = \
+libfoxtools_la_SOURCES = \
 FXBaseObject.cpp FXBaseObject.h \
 fxexdefs.h \
 MFXImageHelper.cpp MFXImageHelper.h \

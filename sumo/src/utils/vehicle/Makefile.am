@@ -1,6 +1,6 @@
-noinst_LIBRARIES = libvehicle.a
+noinst_LTLIBRARIES = libvehicle.la
 
-libvehicle_a_SOURCES = AStarRouter.h \
+libvehicle_la_SOURCES = AStarRouter.h \
 CarEdge.h \
 CHRouter.h CHRouterWrapper.h \
 DijkstraRouterTT.h DijkstraRouterEffort.h \

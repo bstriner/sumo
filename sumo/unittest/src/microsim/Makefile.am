@@ -1,4 +1,4 @@
-noinst_LIBRARIES = libtestmicrosim.a
+noinst_LTLIBRARIES = libtestmicrosim.la
 
-libtestmicrosim_a_SOURCES = MSEventControlTest.cpp \
+libtestmicrosim_la_SOURCES = MSEventControlTest.cpp \
 MSCFModelTest.cpp 

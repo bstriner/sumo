@@ -1,6 +1,6 @@
-noinst_LIBRARIES = libagcity.a
+noinst_LTLIBRARIES = libagcity.la
 
-libagcity_a_SOURCES = AGTime.cpp AGTime.h \
+libagcity_la_SOURCES = AGTime.cpp AGTime.h \
 AGCity.cpp AGCity.h \
 AGStreet.cpp AGStreet.h \
 AGPosition.cpp AGPosition.h \

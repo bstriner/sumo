@@ -7,11 +7,11 @@ GUI_APPS = netedit
 endif
 
 if CHECK_MEMORY_LEAKS
-MEM_LIBS  = ../foreign/nvwa/libnvwa.a
+MEM_LIBS  = ../foreign/nvwa/libnvwa.la
 endif
 
 if TRACI
-TRACI_LIBS = ../traci-server/libtraciserver.a
+TRACI_LIBS = ../traci-server/libtraciserver.la
 endif
 
 bin_PROGRAMS = $(GUI_APPS)
@@ -81,34 +81,34 @@ GNEReferenceCounter.h GNEEvent_NetworkLoaded.h
 
 
 
-netedit_LDADD = ../netimport/libnetimport.a \
-../netimport/vissim/libvissimimport.a \
-../netimport/vissim/typeloader/libvissimtypeload.a \
-../netimport/vissim/tempstructs/libvissimtmpstr.a \
-../netbuild/libnetbuild.a \
-../netwrite/libnetwrite.a \
-../utils/distribution/libdistribution.a \
-../foreign/eulerspiral/libeulerspiral.a \
-../utils/gui/windows/libguiutilsWindows.a \
-../utils/gui/globjects/libguiutilsglobjects.a \
-../utils/gui/div/libguiutilsdiv.a \
-../utils/gui/settings/libguiutilssettings.a \
-../utils/gui/images/libguiutilsimages.a \
-../utils/gui/tracker/libguiutilstracker.a \
-../utils/foxtools/libfoxtools.a \
-../utils/distribution/libdistribution.a \
-../foreign/gl2ps/libgl2ps.a \
-../foreign/polyfonts/libpolyfonts.a \
-../foreign/eulerspiral/libeulerspiral.a \
-../utils/geom/libgeom.a \
-../utils/shapes/libshapes.a \
-../utils/options/liboptions.a \
-../utils/common/libcommon.a \
-../utils/emissions/libemissions.a \
-../utils/xml/libxml.a \
-../utils/importio/libimportio.a \
-../utils/iodevices/libiodevices.a \
-../foreign/tcpip/libtcpip.a \
+netedit_LDADD = ../netimport/libnetimport.la \
+../netimport/vissim/libvissimimport.la \
+../netimport/vissim/typeloader/libvissimtypeload.la \
+../netimport/vissim/tempstructs/libvissimtmpstr.la \
+../netbuild/libnetbuild.la \
+../netwrite/libnetwrite.la \
+../utils/distribution/libdistribution.la \
+../foreign/eulerspiral/libeulerspiral.la \
+../utils/gui/windows/libguiutilsWindows.la \
+../utils/gui/globjects/libguiutilsglobjects.la \
+../utils/gui/div/libguiutilsdiv.la \
+../utils/gui/settings/libguiutilssettings.la \
+../utils/gui/images/libguiutilsimages.la \
+../utils/gui/tracker/libguiutilstracker.la \
+../utils/foxtools/libfoxtools.la \
+../utils/distribution/libdistribution.la \
+../foreign/gl2ps/libgl2ps.la \
+../foreign/polyfonts/libpolyfonts.la \
+../foreign/eulerspiral/libeulerspiral.la \
+../utils/geom/libgeom.la \
+../utils/shapes/libshapes.la \
+../utils/options/liboptions.la \
+../utils/common/libcommon.la \
+../utils/emissions/libemissions.la \
+../utils/xml/libxml.la \
+../utils/importio/libimportio.la \
+../utils/iodevices/libiodevices.la \
+../foreign/tcpip/libtcpip.la \
 $(MEM_LIBS) \
 $(XERCES_LIBS) $(FFMPEG_LIBS) \
 $(FOX_LDFLAGS) $(XERCES_LDFLAGS) $(PROJ_LDFLAGS) $(GDAL_LDFLAGS) $(X_LDFLAGS)

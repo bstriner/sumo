@@ -1,5 +1,5 @@
-noinst_LIBRARIES = libpolyfonts.a
+noinst_LTLIBRARIES = libpolyfonts.la
 
-libpolyfonts_a_SOURCES = \
+libpolyfonts_la_SOURCES = \
 polyfonttypes.h polyfonts.c polyfonts.h \
 pfPSansBold16.c pfPSansBold16.h

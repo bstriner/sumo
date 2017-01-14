@@ -1,4 +1,4 @@
-noinst_LIBRARIES = libgl2ps.a
+noinst_LTLIBRARIES = libgl2ps.la
 
-libgl2ps_a_SOURCES = \
+libgl2ps_la_SOURCES = \
 gl2ps.h gl2ps.c

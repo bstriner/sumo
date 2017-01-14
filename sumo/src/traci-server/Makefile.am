@@ -1,6 +1,6 @@
-noinst_LIBRARIES = libtraciserver.a
+noinst_LTLIBRARIES = libtraciserver.la
 
-libtraciserver_a_SOURCES = TraCIConstants.h \
+libtraciserver_la_SOURCES = TraCIConstants.h \
 TraCIException.h \
 TraCIServer.h TraCIServer.cpp \
 TraCIServerAPI_Edge.h TraCIServerAPI_Edge.cpp \

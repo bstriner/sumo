@@ -1,4 +1,4 @@
-noinst_LIBRARIES = libnetimport.a
+noinst_LTLIBRARIES = libnetimport.la
 
 libnetimport_a_SOURCES = NIFrame.cpp NIFrame.h \
 NILoader.cpp NILoader.h \

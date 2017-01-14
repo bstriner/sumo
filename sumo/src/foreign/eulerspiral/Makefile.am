@@ -1,5 +1,5 @@
-noinst_LIBRARIES = libeulerspiral.a
+noinst_LTLIBRARIES = libeulerspiral.la
 
-libeulerspiral_a_SOURCES = \
+libeulerspiral_la_SOURCES = \
 angles.h BiArc.cpp BiArc.h \
 euler.cpp euler.h points.h

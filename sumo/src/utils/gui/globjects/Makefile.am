@@ -1,6 +1,6 @@
-noinst_LIBRARIES = libguiutilsglobjects.a
+noinst_LTLIBRARIES = libguiutilsglobjects.la
 
-libguiutilsglobjects_a_SOURCES = GLIncludes.h \
+libguiutilsglobjects_la_SOURCES = GLIncludes.h \
 GUIGLObjectPopupMenu.cpp GUIGLObjectPopupMenu.h \
 GUIGlObject.cpp GUIGlObject.h \
 GUIGlObjectStorage.cpp GUIGlObjectStorage.h \

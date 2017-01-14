@@ -1,6 +1,6 @@
-noinst_LIBRARIES = libtestgeom.a
+noinst_LTLIBRARIES = libtestgeom.la
 
-libtestgeom_a_SOURCES = BoundaryTest.cpp \
+libtestgeom_la_SOURCES = BoundaryTest.cpp \
 GeoConvHelperTest.cpp \
 PositionVectorTest.cpp \
 GeomHelperTest.cpp

@@ -1,4 +1,4 @@
-noinst_LIBRARIES = libguiutilsimages.a
+noinst_LTLIBRARIES = libguiutilsimages.la
 
 EXTRA_DIST = allow_rotation.xpm \
 app_breakpoints.xpm app_finder.xpm \
@@ -49,6 +49,6 @@ GNETexture_LanePedestrian.cpp GNETexture_TLS.cpp \
 modeadditional.xpm modeconnection.xpm modecreateedge.xpm modecrossing.xpm \
 modedelete.xpm modeinspect.xpm modemove.xpm modeselect.xpm modetrafficlight.xpm
 
-libguiutilsimages_a_SOURCES = GUIIconSubSys.cpp GUIIconSubSys.h \
+libguiutilsimages_la_SOURCES = GUIIconSubSys.cpp GUIIconSubSys.h \
 GUITextureSubSys.cpp GUITextureSubSys.h \
 GUIIcons.h GUITexturesHelper.cpp GUITexturesHelper.h GUITextures.h
