@@ -2,123 +2,105 @@
 
 extern MSNet* libsumo_net;
 
-static PyObject *
-pysumo_vehicle_list(PyObject *self, PyObject *args)
+LIBSUMO_DLL_EXPORTED std::vector<string>
+libsumo_vehicle_list()
 {
-	PyObject* ids;
-	ids = PyList_New(0);
-	MSVehicleControl& c = gNet->getVehicleControl();
+	std::vector<string> v = {}
+	MSVehicleControl& c = libsumo_net->getVehicleControl();
 	for (MSVehicleControl::constVehIt i = c.loadedVehBegin();
 		i != c.loadedVehEnd(); ++i) {
 		if (i->second->isOnRoad() || i->second->isParking()) {
-			PyList_Append(ids, PyString_FromString(i->first.c_str()));
+			v.push_back(i->first);
 		}
 	}
 	return ids;
 }
 
-static PyObject *
-pysumo_vehicle_position(PyObject *self, PyObject *args)
+LIBSUMO_DLL_EXPORTED std::tuple<double,double,double>
+libsumo_vehicle_position(const char* id)
 {
-	char* cname;
-	double x,y,z;
-	if (! PyArg_ParseTuple( args, "s", &cname)) return NULL;
-	
-	SUMOVehicle* sumoVehicle = MSNet::getInstance()->getVehicleControl().getVehicle(cname);
+	double x,y,z;	
+	SUMOVehicle* sumoVehicle = libsumo_net->getVehicleControl().getVehicle(id);
 	if (sumoVehicle == 0) {
-		PyErr_SetString(PyExc_RuntimeError, "Unknown vehicle");
-		return NULL;
+		throw PRocessError("Unknown vehicle");
 	}
 	MSVehicle* v = dynamic_cast<MSVehicle*>(sumoVehicle);
 	if (v == 0) {
-		PyErr_SetString(PyExc_RuntimeError, "Vehicle is not a micro-simulation vehicle");
-		return NULL;
+		throw ProcessError("Vehicle is not a micro-simulation vehicle");
 	}
 	bool onRoad = v->isOnRoad();
 	bool visible = onRoad || v->isParking();
 	
 	x=visible ? v->getPosition().x() : INVALID_DOUBLE_VALUE;
 	y=visible ? v->getPosition().y() : INVALID_DOUBLE_VALUE;
-	z= visible ? v->getPosition().z() : INVALID_DOUBLE_VALUE;
-	return Py_BuildValue("ddd",x,y,z);
+	z=visible ? v->getPosition().z() : INVALID_DOUBLE_VALUE;
+	return std::make_tuple(x,y,z);
 }
 
-static PyObject *
-pysumo_vehicle_speed(PyObject *self, PyObject *args)
+LIBSUMO_DLL_EXPORTED double
+libsumo_vehicle_speed(const char* id)
 {
-	char* cname;
-	double speed;
-	if (! PyArg_ParseTuple( args, "s", &cname)) return NULL;
-	
-	SUMOVehicle* sumoVehicle = MSNet::getInstance()->getVehicleControl().getVehicle(cname);
+	SUMOVehicle* sumoVehicle = libsumo_net->getVehicleControl().getVehicle(id);
 	if (sumoVehicle == 0) {
-		PyErr_SetString(PyExc_RuntimeError, "Unknown vehicle");
-		return NULL;
+		throw ProcessError("Unknown vehicle");
 	}
 	MSVehicle* v = dynamic_cast<MSVehicle*>(sumoVehicle);
 	if (v == 0) {
-		PyErr_SetString(PyExc_RuntimeError, "Vehicle is not a micro-simulation vehicle");
-		return NULL;
+		throw ProcessError( "Vehicle is not a micro-simulation vehicle");
 	}
 	bool onRoad = v->isOnRoad();
 	bool visible = onRoad || v->isParking();
-	speed = visible ? v->getSpeed() : INVALID_DOUBLE_VALUE;
-	return Py_BuildValue("d",speed);
+	return visible ? v->getSpeed() : INVALID_DOUBLE_VALUE;
 }
 
-static PyObject *
-pysumo_vehicle_positions(PyObject *self, PyObject *args)
+LIBSUMO_DLL_EXPORTED std::vector<std::tuple<double, double, double>>
+libsumo_vehicle_positions()
 {
-	PyObject* positions;
-	positions = PyList_New(0);
-	MSVehicleControl& c = gNet->getVehicleControl();
+	std::vector<std::tuple<double, double, double>> v = {}
+	MSVehicleControl& c = libsumo_net->getVehicleControl();
 	for (MSVehicleControl::constVehIt i = c.loadedVehBegin();
 		i != c.loadedVehEnd(); ++i) {
 		if (i->second->isOnRoad() || i->second->isParking()) {
 			SUMOVehicle* sumoVehicle = c.getVehicle(i->first.c_str());
 			if (sumoVehicle == 0) {
-				PyErr_SetString(PyExc_RuntimeError, "Unknown vehicle");
-				return NULL;
+				throw ProcessError("Unknown vehicle");
 			}
 			MSVehicle* v = dynamic_cast<MSVehicle*>(sumoVehicle);
 			if (v == 0) {
-				PyErr_SetString(PyExc_RuntimeError, "Vehicle is not a micro-simulation vehicle");
-				return NULL;
+				throw ProcessError("Vehicle is not a micro-simulation vehicle");
 			}
 			bool onRoad = v->isOnRoad();
 			bool visible = onRoad || v->isParking();
 			double x=visible ? v->getPosition().x() : INVALID_DOUBLE_VALUE;
 			double y=visible ? v->getPosition().y() : INVALID_DOUBLE_VALUE;
 			double z= visible ? v->getPosition().z() : INVALID_DOUBLE_VALUE;
-			PyList_Append(positions, Py_BuildValue("ddd",x,y,z));
+			v.push_back(std::make_tuple(x,y,z))
 		}
 	}
-	return positions;
+	return v;
 }
-static PyObject *
-pysumo_vehicle_speeds(PyObject *self, PyObject *args)
+
+LIBSUMO_DLL_EXPORTED std::vector<double>
+libsumo_vehicle_speeds()
 {
-	PyObject* speeds;
-	speeds = PyList_New(0);
-	MSVehicleControl& c = gNet->getVehicleControl();
+	std::vector<double> v = {}
+	MSVehicleControl& c = libsumo_net->getVehicleControl();
 	for (MSVehicleControl::constVehIt i = c.loadedVehBegin();
 		i != c.loadedVehEnd(); ++i) {
 		if (i->second->isOnRoad() || i->second->isParking()) {
 			SUMOVehicle* sumoVehicle = c.getVehicle(i->first.c_str());
 			if (sumoVehicle == 0) {
-				PyErr_SetString(PyExc_RuntimeError, "Unknown vehicle");
-				return NULL;
+				throw ProcessError(PyExc_RuntimeError, "Unknown vehicle");
 			}
 			MSVehicle* v = dynamic_cast<MSVehicle*>(sumoVehicle);
 			if (v == 0) {
-				PyErr_SetString(PyExc_RuntimeError, "Vehicle is not a micro-simulation vehicle");
-				return NULL;
+				throw ProcessError(PyExc_RuntimeError, "Vehicle is not a micro-simulation vehicle");
 			}
 			bool onRoad = v->isOnRoad();
 			bool visible = onRoad || v->isParking();
 			double speed = visible ? v->getSpeed() : INVALID_DOUBLE_VALUE;
-			PyList_Append(speeds, Py_BuildValue("d",speed));
+			v.push_back(speed);
 		}
 	}
-	return speeds;
+	return v;
 }

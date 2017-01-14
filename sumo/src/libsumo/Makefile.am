@@ -4,4 +4,6 @@ libsumo_la_SOURCES = \
 	libsumo.cpp \
 	simulation.cpp \
 	inductionloop.cpp \
-	meme.cpp 
+	meme.cpp \
+	vehicle.cpp \
+	tls.cpp

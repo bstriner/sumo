@@ -2,28 +2,25 @@
 
 extern MSNet* libsumo_net;
 
-LIBSUMO_DLL_EXPORTED static const char*
-pysumo_tls_getstate(PyObject *self, PyObject *args)
+LIBSUMO_DLL_EXPORTED const char*
+libsumo_tls_getstate(const char* id)
 {
-	char* cname;
-	if (! PyArg_ParseTuple( args, "s", &cname)) return NULL;	
-	if (!gNet->getTLSControl().knows(cname)) {
-		PyErr_SetString(PyExc_RuntimeError, "Unknown traffic light");
-		return NULL;
+	if (!libsumo_net->getTLSControl().knows(id)) {
+		throw ProcessError("Unknown traffic light");
 	}
     MSTLLogicControl::TLSLogicVariants& vars = 
-		gNet->getTLSControl().get(cname);
+		libsumo_net->getTLSControl().get(id);
 	return vars.getActive()->getCurrentPhaseDef().getState();
 }
 
 
-LIBSUMO_DLL_EXPORTED static void
-pysumo_tls_setstate(const char* id, const char* state)
+LIBSUMO_DLL_EXPORTED void
+libsumo_tls_setstate(const char* id, const char* state)
 {
-	if (!gNet->getTLSControl().knows(id)) {
-		throw new ProcessError("Unknown traffic light");
+	if (!libsumo_net->getTLSControl().knows(id)) {
+		throw ProcessError("Unknown traffic light");
 	}
     MSTLLogicControl::TLSLogicVariants& vars = 
-		gNet->getTLSControl().get(id);
-	vars.setStateInstantiatingOnline(gNet->getTLSControl(), state);
+		libsumo_net->getTLSControl().get(id);
+	vars.setStateInstantiatingOnline(libsumo_net->getTLSControl(), state);
 }

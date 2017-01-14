@@ -29,8 +29,8 @@ load(OptionsCont& oc) {
     return net;
 }
 
-LIBSUMO_DLL_EXPORTED static void 
-sumo_simulation_start(int sumo_argc, char** sumo_argv)
+LIBSUMO_DLL_EXPORTED void 
+libsumo_simulation_start(int sumo_argc, char** sumo_argv)
 {
 	OptionsCont& oc = OptionsCont::getOptions();
     oc.setApplicationDescription("A microscopic road traffic simulation.");
@@ -55,16 +55,16 @@ sumo_simulation_start(int sumo_argc, char** sumo_argv)
     libsumo_net->loadRoutes();
 }
 
-LIBSUMO_DLL_EXPORTED static void
-sumo_simulation_stop()
+LIBSUMO_DLL_EXPORTED void
+libsumo_simulation_stop()
 {
 	libsumo_net->closeSimulation(0);
     delete libsumo_net;
     SystemFrame::close();
 }
 
-LIBSUMO_DLL_EXPORTED static void
-sumo_simulation_step()
+LIBSUMO_DLL_EXPORTED void
+libsumo_simulation_step()
 {
 	libsumo_net->simulationStep();
 }

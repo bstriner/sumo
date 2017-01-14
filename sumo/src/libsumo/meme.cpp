@@ -2,8 +2,8 @@
 
 extern MSNet* libsumo_net;
 
-LIBSUMO_DLL_EXPORTED static double
-pysumo_meme_meanspeed(const char* id)
+LIBSUMO_DLL_EXPORTED double
+libsumo_meme_meanspeed(const char* id)
 {
 	MSE3Collector* e3 = 
 		static_cast<MSE3Collector*>(libsumo_net->getDetectorControl()
@@ -14,8 +14,8 @@ pysumo_meme_meanspeed(const char* id)
 	return e3->getCurrentMeanSpeed();
 }
 
-LIBSUMO_DLL_EXPORTED static int
-pysumo_meme_vehiclenumber(const char* id)
+LIBSUMO_DLL_EXPORTED int
+libsumo_meme_vehiclenumber(const char* id)
 {
 	MSE3Collector* e3 = 
 		static_cast<MSE3Collector*>(libsumo_net->getDetectorControl()

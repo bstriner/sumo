@@ -47,3 +47,34 @@
 #else
 #define LIBSUMO_DLL_EXPORTED
 #endif
+
+
+
+LIBSUMO_DLL_EXPORTED void 
+	libsumo_simulation_start(int sumo_argc, char** sumo_argv);
+LIBSUMO_DLL_EXPORTED void 
+	libsumo_simulation_stop();
+LIBSUMO_DLL_EXPORTED void 
+	libsumo_simulation_step();
+LIBSUMO_DLL_EXPORTED const char* 
+	libsumo_tls_getstate(const char* id);
+LIBSUMO_DLL_EXPORTED void 
+	libsumo_tls_setstate(const char* id, const char* state);
+LIBSUMO_DLL_EXPORTED std::vector<string> 
+	libsumo_vehicle_list();
+LIBSUMO_DLL_EXPORTED std::tuple<double,double,double> 
+	libsumo_vehicle_position(const char* id);
+LIBSUMO_DLL_EXPORTED double 
+	libsumo_vehicle_speed(const char* id);
+LIBSUMO_DLL_EXPORTED std::vector<std::tuple<double, double, double>> 
+	libsumo_vehicle_positions();
+LIBSUMO_DLL_EXPORTED std::vector<double> 
+	libsumo_vehicle_speeds();
+LIBSUMO_DLL_EXPORTED double 
+	libsumo_meme_meanspeed(const char* id);
+LIBSUMO_DLL_EXPORTED int 
+	libsumo_meme_vehiclenumber(const char* id);
+LIBSUMO_DLL_EXPORTED double 
+	libsumo_inductionloop_meanspeed(const char* id);
+LIBSUMO_DLL_EXPORTED int 
+	libsumo_inductionloop_vehiclenumber(const char* id);

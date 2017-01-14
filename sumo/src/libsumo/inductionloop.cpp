@@ -2,8 +2,8 @@
 
 extern MSNet* libsumo_net;
 
-LIBSUMO_DLL_EXPORTED static double
-sumo_inductionloop_meanspeed(const char* id)
+LIBSUMO_DLL_EXPORTED double
+libsumo_inductionloop_meanspeed(const char* id)
 {
 	MSInductLoop* il = 
 		dynamic_cast<MSInductLoop*>(libsumo_net->getDetectorControl()
@@ -14,8 +14,8 @@ sumo_inductionloop_meanspeed(const char* id)
 	return il->getCurrentSpeed();
 }
 
-LIBSUMO_DLL_EXPORTED static int
-pysumo_inductionloop_vehiclenumber(const char* id)
+LIBSUMO_DLL_EXPORTED int
+libsumo_inductionloop_vehiclenumber(const char* id)
 {
 	MSInductLoop* il = 
 		dynamic_cast<MSInductLoop*>(libsumo_net->getDetectorControl()
