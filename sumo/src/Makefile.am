@@ -107,6 +107,9 @@ SUBDIRS = foreign utils microsim router od marouter mesosim \
 netbuild netwrite netgen netimport netload \
 polyconvert dfrouter duarouter jtrrouter activitygen tools \
 $(TRACI_DIRS) $(GUI_DIRS)
+if WITH_LIBSUMO
+	SUBDIRS = $(SUBDIRS) libsumo
+endif
 
 if WITH_VERSION_H
 VERSION_H = version.h

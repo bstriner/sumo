@@ -41,7 +41,17 @@ else
     ac_disabled="$ac_disabled Coverage"
 fi
 
+AC_ARG_ENABLE([libsumo], [AS_HELP_STRING([--enable-libsumo],[enable build of libsumo shared library [default=no],])])
+AM_CONDITIONAL([WITH_LIBSUMO], [test x$enable_libsumo = xyes])
 AC_ARG_ENABLE([pic], [AS_HELP_STRING([--enable-pic],[enable compilation of position-independent code [default=no],])])
+
+if test x$enable_libsumo = xyes; then
+	enable_pic=yes
+	ac_enabled="$ac_enabled LIBSUMO"
+else
+	ac_disabled="$ac_disabled LIBSUMO"
+fi
+
 if test x$enable_pic = xyes; then
     CXXFLAGS="-fPIC $CXXFLAGS"
     ac_enabled="$ac_enabled PIC"
@@ -516,6 +526,7 @@ src/router/Makefile
 src/dfrouter/Makefile
 src/duarouter/Makefile
 src/jtrrouter/Makefile
+src/libsumo/Makefile
 src/tools/Makefile
 src/traci_testclient/Makefile
 src/traci-server/Makefile

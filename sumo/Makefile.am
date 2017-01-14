@@ -130,3 +130,7 @@ sumo$(EXEEXT) netconvert$(EXEEXT) \
         netedit$(EXEEXT) \
         sumo-gui$(EXEEXT):
 	$(MAKE) -C src $@
+
+libsumo.so:
+	$(MAKE) -C src/libsumo
+	
