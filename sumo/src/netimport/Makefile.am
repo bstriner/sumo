@@ -1,6 +1,6 @@
 noinst_LTLIBRARIES = libnetimport.la
 
-libnetimport_a_SOURCES = NIFrame.cpp NIFrame.h \
+libnetimport_la_SOURCES = NIFrame.cpp NIFrame.h \
 NILoader.cpp NILoader.h \
 NIImporter_ArcView.cpp NIImporter_ArcView.h \
 NIImporter_DlrNavteq.cpp NIImporter_DlrNavteq.h \
