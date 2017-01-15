@@ -42,8 +42,8 @@ else
 fi
 
 AC_ARG_ENABLE([libsumo], [AS_HELP_STRING([--enable-libsumo],[enable build of libsumo shared library [default=no],])])
-AM_CONDITIONAL([WITH_LIBSUMO], [test x$enable_libsumo = xyes])
-if test x$enable_libsumo = xyes; then
+AM_CONDITIONAL([WITH_LIBSUMO], [test "x$enable_libsumo" == "xyes"])
+if test "x$enable_libsumo" == "xyes"; then
 	ac_enabled="$ac_enabled LIBSUMO"
 else
 	ac_disabled="$ac_disabled LIBSUMO"

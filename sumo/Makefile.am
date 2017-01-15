@@ -128,9 +128,6 @@ sumo$(EXEEXT) netconvert$(EXEEXT) \
         dfrouter$(EXEEXT) jtrrouter$(EXEEXT) \
         od2trips$(EXEEXT) polyconvert$(EXEEXT) \
         netedit$(EXEEXT) \
-        sumo-gui$(EXEEXT):
+        sumo-gui$(EXEEXT) libsumo.la:
 	$(MAKE) -C src $@
-
-libsumo.so:
-	$(MAKE) -C src/libsumo
 	

@@ -60,16 +60,18 @@ LIBSUMO_DLL_EXPORTED const char*
 	libsumo_tls_getstate(const char* id);
 LIBSUMO_DLL_EXPORTED void 
 	libsumo_tls_setstate(const char* id, const char* state);
-LIBSUMO_DLL_EXPORTED std::vector<string> 
-	libsumo_vehicle_list();
-LIBSUMO_DLL_EXPORTED std::tuple<double,double,double> 
-	libsumo_vehicle_position(const char* id);
+LIBSUMO_DLL_EXPORTED int
+	libsumo_vehicle_count();
+LIBSUMO_DLL_EXPORTED void
+	libsumo_vehicle_list(std::basic_string<char>* list);
+LIBSUMO_DLL_EXPORTED void
+	libsumo_vehicle_position(const char* id, double* pos);
 LIBSUMO_DLL_EXPORTED double 
 	libsumo_vehicle_speed(const char* id);
-LIBSUMO_DLL_EXPORTED std::vector<std::tuple<double, double, double>> 
-	libsumo_vehicle_positions();
-LIBSUMO_DLL_EXPORTED std::vector<double> 
-	libsumo_vehicle_speeds();
+LIBSUMO_DLL_EXPORTED void
+	libsumo_vehicle_positions(double* positions);
+LIBSUMO_DLL_EXPORTED void
+	libsumo_vehicle_speeds(double* speeds);
 LIBSUMO_DLL_EXPORTED double 
 	libsumo_meme_meanspeed(const char* id);
 LIBSUMO_DLL_EXPORTED int 

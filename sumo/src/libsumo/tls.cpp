@@ -10,7 +10,7 @@ libsumo_tls_getstate(const char* id)
 	}
     MSTLLogicControl::TLSLogicVariants& vars = 
 		libsumo_net->getTLSControl().get(id);
-	return vars.getActive()->getCurrentPhaseDef().getState();
+	return vars.getActive()->getCurrentPhaseDef().getState().c_str();
 }
 
 

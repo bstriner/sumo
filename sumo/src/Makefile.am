@@ -14,6 +14,10 @@ TRACI_LIBS = ./traci-server/libtraciserver.la ./utils/traci/libtraci.la
 TRACI_DIRS = traci-server traci_testclient
 endif
 
+if WITH_LIBSUMO
+LIBSUMO_DIRS = libsumo
+endif
+
 bin_PROGRAMS = od2trips sumo netconvert $(GUI_APPS)
 
 COMMON_LIBS = ./utils/options/liboptions.la \
@@ -106,10 +110,8 @@ endif
 SUBDIRS = foreign utils microsim router od marouter mesosim \
 netbuild netwrite netgen netimport netload \
 polyconvert dfrouter duarouter jtrrouter activitygen tools \
-$(TRACI_DIRS) $(GUI_DIRS)
-if WITH_LIBSUMO
-	SUBDIRS = $(SUBDIRS) libsumo
-endif
+$(TRACI_DIRS) $(GUI_DIRS) $(LIBSUMO_DIRS)
+
 
 if WITH_VERSION_H
 VERSION_H = version.h
@@ -121,3 +123,7 @@ endif
 EXTRA_DIST = config.h config.h.in \
 $(VERSION_H) guisim.rc \
 windows_config.h
+
+libsumo.la:
+	$(MAKE) -C libsumo $@
+
