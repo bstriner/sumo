@@ -70,6 +70,8 @@ LIBSUMO_DLL_EXPORTED double
 	libsumo_vehicle_speed(const char* id);
 LIBSUMO_DLL_EXPORTED void
 	libsumo_vehicle_positions(double* positions);
+LIBSUMO_DLL_EXPORTED double
+	libsumo_vehicle_lane_position(const char* id);
 LIBSUMO_DLL_EXPORTED void
 	libsumo_vehicle_speeds(double* speeds);
 LIBSUMO_DLL_EXPORTED double 

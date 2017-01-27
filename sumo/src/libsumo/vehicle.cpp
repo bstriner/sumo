@@ -52,6 +52,21 @@ libsumo_vehicle_position(const char* id, double* pos)
 }
 
 LIBSUMO_DLL_EXPORTED double
+libsumo_vehicle_lane_position(const char* id)
+{
+	SUMOVehicle* sumoVehicle = libsumo_net -> getVehicleControl().getVehicle(id);
+	if(sumoVehicle == 0){
+		throw ProcessError("Unknown vehicle");
+	}
+	MSVehicle* v = dynamic_cast<MSVehicle*>(sumoVehicle);
+	if (v == 0) {
+                throw ProcessError("Vehicle is not a micro-simulation vehicle");
+        }
+	bool onRoad = v->isOnRoad();
+	bool visible = onRoad || v->isParking();
+	return visible ? v->getPositionOnLane() : INVALID_DOUBLE_VALUE;
+}
+LIBSUMO_DLL_EXPORTED double
 libsumo_vehicle_speed(const char* id)
 {
 	SUMOVehicle* sumoVehicle = libsumo_net->getVehicleControl().getVehicle(id);
