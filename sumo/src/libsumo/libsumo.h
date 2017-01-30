@@ -7,6 +7,7 @@
 #include <microsim/MSNet.h>
 #include <microsim/MSRoute.h>
 #include <microsim/MSVehicleControl.h>
+#include <microsim/MSLane.h>
 #include <netload/NLBuilder.h>
 #include <netload/NLHandler.h>
 #include <netload/NLTriggerBuilder.h>
@@ -82,3 +83,13 @@ LIBSUMO_DLL_EXPORTED double
 	libsumo_inductionloop_meanspeed(const char* id);
 LIBSUMO_DLL_EXPORTED int 
 	libsumo_inductionloop_vehiclenumber(const char* id);
+LIBSUMO_DLL_EXPORTED int
+	libsumo_tls_controlledLanes_count(const char* id);
+LIBSUMO_DLL_EXPORTED void
+	libsumo_tls_controlledLanes(const char* id, std::basic_string<char>* list);
+LIBSUMO_DLL_EXPORTED void
+	libsumo_lane_list(std::basic_string<char>* list);
+LIBSUMO_DLL_EXPORTED int
+	libsumo_lane_count();
+LIBSUMO_DLL_EXPORTED std::vector<std::string>
+	libsumo_lane_onLaneVehicles(const char* id);

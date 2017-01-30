@@ -5,7 +5,8 @@ libsumo_la_SOURCES = \
 	inductionloop.cpp \
 	meme.cpp \
 	vehicle.cpp \
-	tls.cpp
+	tls.cpp \
+        lane.cpp
 libsumo_la_LIBADD = \
 	../netload/libnetload.la \
 	../microsim/libmicrosim.la \
