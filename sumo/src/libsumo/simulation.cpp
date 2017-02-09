@@ -68,3 +68,9 @@ libsumo_simulation_step()
 {
 	libsumo_net->simulationStep();
 }
+
+LIBSUMO_DLL_EXPORTED int
+libsumo_simulation_minexpectednumber()
+{
+	return libsumo_net->getVehicleControl().getActiveVehicleCount() +libsumo_net->getInsertionControl().getPendingFlowCount();
+}
