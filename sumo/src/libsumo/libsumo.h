@@ -28,6 +28,7 @@
 #include <microsim/output/MSDetectorControl.h>
 #include <utils/iodevices/OutputDevice.h>
 #include <mesosim/MEVehicleControl.h>
+#include <microsim/devices/MSDevice_Tripinfo.h>
 
 //#define HAVE_INTERNAL_LANES
 //#define NO_TRACI
@@ -60,6 +61,8 @@ LIBSUMO_DLL_EXPORTED void
 	libsumo_simulation_step();
 LIBSUMO_DLL_EXPORTED int
 	libsumo_simulation_minexpectednumber();
+LIBSUMO_DLL_EXPORTED std::string
+	libsumo_simulation_tripstatistics();
 LIBSUMO_DLL_EXPORTED const char* 
 	libsumo_tls_getstate(const char* id);
 LIBSUMO_DLL_EXPORTED void 
