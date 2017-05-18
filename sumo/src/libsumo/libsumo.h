@@ -7,6 +7,7 @@
 #include <microsim/MSNet.h>
 #include <microsim/MSRoute.h>
 #include <microsim/MSVehicleControl.h>
+#include <microsim/MSInsertionControl.h>
 #include <microsim/MSLane.h>
 #include <netload/NLBuilder.h>
 #include <netload/NLHandler.h>
@@ -27,6 +28,7 @@
 #include <microsim/output/MSDetectorControl.h>
 #include <utils/iodevices/OutputDevice.h>
 #include <mesosim/MEVehicleControl.h>
+#include <microsim/devices/MSDevice_Tripinfo.h>
 
 //#define HAVE_INTERNAL_LANES
 //#define NO_TRACI
@@ -57,6 +59,10 @@ LIBSUMO_DLL_EXPORTED void
 	libsumo_simulation_stop();
 LIBSUMO_DLL_EXPORTED void 
 	libsumo_simulation_step();
+LIBSUMO_DLL_EXPORTED int
+	libsumo_simulation_minexpectednumber();
+LIBSUMO_DLL_EXPORTED std::string
+	libsumo_simulation_tripstatistics();
 LIBSUMO_DLL_EXPORTED const char* 
 	libsumo_tls_getstate(const char* id);
 LIBSUMO_DLL_EXPORTED void 
@@ -69,6 +75,8 @@ LIBSUMO_DLL_EXPORTED void
 	libsumo_vehicle_position(const char* id, double* pos);
 LIBSUMO_DLL_EXPORTED double 
 	libsumo_vehicle_speed(const char* id);
+LIBSUMO_DLL_EXPORTED double
+	libsumo_vehicle_waitingtime(const char* id);
 LIBSUMO_DLL_EXPORTED void
 	libsumo_vehicle_positions(double* positions);
 LIBSUMO_DLL_EXPORTED double
@@ -79,6 +87,10 @@ LIBSUMO_DLL_EXPORTED double
 	libsumo_meme_meanspeed(const char* id);
 LIBSUMO_DLL_EXPORTED int 
 	libsumo_meme_vehiclenumber(const char* id);
+LIBSUMO_DLL_EXPORTED int
+	libsumo_meme_vehiclehaltingnumber(const char* id);
+LIBSUMO_DLL_EXPORTED std::vector<std::string>
+	libsumo_meme_vehicleids(const char* id);
 LIBSUMO_DLL_EXPORTED double 
 	libsumo_inductionloop_meanspeed(const char* id);
 LIBSUMO_DLL_EXPORTED int 
